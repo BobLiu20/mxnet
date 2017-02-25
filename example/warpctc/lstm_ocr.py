@@ -174,6 +174,6 @@ if __name__ == '__main__':
     model.fit(X=data_train, eval_data=data_val,
               eval_metric = mx.metric.np(Accuracy),
               batch_end_callback=mx.callback.Speedometer(BATCH_SIZE, 50),
-              epoch_end_callback = mx.callback.do_checkpoint(prefix, 1))
+              epoch_end_callback = mx.callback.do_checkpoint("ocr", 1))
 
     model.save("ocr")
